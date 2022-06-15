@@ -1,0 +1,8 @@
+﻿  main.cpp
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\cl5522-assignment1\cl5522-assignment1\main.cpp(185,30): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\cl5522-assignment1\cl5522-assignment1\main.cpp(186,50): warning C4244: '+=': conversion from 'genType' to 'float', possible loss of data
+          with
+          [
+              genType=double
+          ]
+  cl5522-assignment1.vcxproj -> C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\cl5522-assignment1\Debug\cl5522-assignment1.exe

@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cl5522-assignment1", "cl5522-assignment1\cl5522-assignment1.vcxproj", "{32CF21EA-3EB9-4440-85FD-1ED81B2C91D5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TrianglesLec2", "..\TrianglesLec2\TrianglesLec2\TrianglesLec2.vcxproj", "{285F7EBB-6F71-4C08-A084-60F7E0A32051}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -23,14 +21,6 @@ Global
 		{32CF21EA-3EB9-4440-85FD-1ED81B2C91D5}.Release|x64.Build.0 = Release|x64
 		{32CF21EA-3EB9-4440-85FD-1ED81B2C91D5}.Release|x86.ActiveCfg = Release|Win32
 		{32CF21EA-3EB9-4440-85FD-1ED81B2C91D5}.Release|x86.Build.0 = Release|Win32
-		{285F7EBB-6F71-4C08-A084-60F7E0A32051}.Debug|x64.ActiveCfg = Debug|x64
-		{285F7EBB-6F71-4C08-A084-60F7E0A32051}.Debug|x64.Build.0 = Debug|x64
-		{285F7EBB-6F71-4C08-A084-60F7E0A32051}.Debug|x86.ActiveCfg = Debug|Win32
-		{285F7EBB-6F71-4C08-A084-60F7E0A32051}.Debug|x86.Build.0 = Debug|Win32
-		{285F7EBB-6F71-4C08-A084-60F7E0A32051}.Release|x64.ActiveCfg = Release|x64
-		{285F7EBB-6F71-4C08-A084-60F7E0A32051}.Release|x64.Build.0 = Release|x64
-		{285F7EBB-6F71-4C08-A084-60F7E0A32051}.Release|x86.ActiveCfg = Release|Win32
-		{285F7EBB-6F71-4C08-A084-60F7E0A32051}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

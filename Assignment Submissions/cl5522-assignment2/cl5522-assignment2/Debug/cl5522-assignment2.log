@@ -1,0 +1,11 @@
+﻿  main.cpp
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522-assignment2\cl5522-assignment2\main.cpp(85,26): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522-assignment2\cl5522-assignment2\main.cpp(86,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522-assignment2\cl5522-assignment2\main.cpp(87,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522-assignment2\cl5522-assignment2\main.cpp(88,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522-assignment2\cl5522-assignment2\main.cpp(90,29): warning C4244: 'initializing': conversion from 'genType' to 'const float', possible loss of data
+          with
+          [
+              genType=double
+          ]
+  cl5522-assignment2.vcxproj -> C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522-assignment2\Debug\cl5522-assignment2.exe

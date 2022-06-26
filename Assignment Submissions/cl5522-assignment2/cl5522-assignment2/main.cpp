@@ -1,3 +1,10 @@
+/*
+
+Author: Charles Liu
+Program: CS3113 Assignment 2: Pong
+
+*/
+
 #define GL_SILENCE_DEPRECATION
 #define STB_IMAGE_IMPLEMENTATION
 
@@ -72,9 +79,9 @@ glm::vec3 lowerwall_position = glm::vec3(0.0f, -3.5f, 0.0f);
 glm::vec3 rightwall_position = glm::vec3(7.3f, 0.0f, 0.0f);
 glm::vec3 leftwall_position = glm::vec3(-7.3f, 0.0f, 0.0f);
 
-float player_speed = 3.0f;  // move 1 unit per second
-float other_speed = 3.0f;
-float ball_speed = 2.0f;
+float player_speed = 11.0f;  // move 1 unit per second
+float other_speed = 11.0f;
+float ball_speed = 5.0f;
 
 #define LOG(argument) std::cout << argument << '\n'
 
@@ -177,8 +184,8 @@ void initialise()
  */
 bool check_collision(glm::vec3& position_a, glm::vec3& position_b)
 {
-    float x_distance = fabs(position_a[0] - position_b[0]) - 0.5f;
-    float y_distance = fabs(position_a[1] - position_b[1]) - 0.7f;
+    float x_distance = fabs(position_a[0] - position_b[0]) - 0.2f;
+    float y_distance = fabs(position_a[1] - position_b[1]) - 0.3f;
     if (x_distance < 0 && y_distance < 0) {
         return true;
     }
@@ -374,8 +381,8 @@ void render() {
 
     // Vertices
     float vertices[] = {
-        -0.3f, -0.5f, 0.3f, -0.5f, 0.3f, 0.5f,  // triangle 1
-        -0.3f, -0.5f, 0.3f, 0.5f, -0.3f, 0.5f   // triangle 2
+        -0.1f, -0.4f, 0.1f, -0.4f, 0.1f, 0.4f,  // triangle 1
+        -0.1f, -0.4f, 0.1f, 0.4f, -0.1f, 0.4f   // triangle 2
     };
 
     // Textures
@@ -425,8 +432,8 @@ void render() {
     glDisableVertexAttribArray(program.positionAttribute);
 
     float vertices_ball[] = {
-        -0.2f, -0.2f, 0.2f, -0.2f, -0.2f, 0.2f,  // triangle 1
-        0.2f, 0.2f, 0.2f, -0.2f, -0.2f, 0.2f   // triangle 2
+        -0.1f, -0.1f, 0.1f, -0.1f, -0.1f, 0.1f,  // triangle 1
+        0.1f, 0.1f, 0.1f, -0.1f, -0.1f, 0.1f   // triangle 2
     };
 
     glVertexAttribPointer(program.positionAttribute, 2, GL_FLOAT, false, 0, vertices_ball);

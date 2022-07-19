@@ -121,7 +121,7 @@ void Entity::update(float delta_time, Entity* collidable_entities, int collidabl
 	position.x += velocity.x * delta_time;
 	check_collision_x(collidable_entities, collidable_entity_count);
 
-	//Jump
+	//Thrust
 	if (is_thrusting_up) {
 		//Step 1: Immediately return the flag to its originial false state
 		is_thrusting_up = false;
@@ -207,8 +207,8 @@ void Entity::render(ShaderProgram* program) {
 
 		case START_PLATFORM:
 		{
-			float vertices[] = { -0.5, -0.25, 0.5, -0.25, 0.5, 0.25,
-						-0.5, -0.25, 0.5, 0.25, -0.5, 0.25 };
+			float vertices[] = { -2.0, -0.25, 2.0, -0.25, 2.0, 0.25,
+						-2.0, -0.25, 2.0, 0.25, -2.0, 0.25 };
 			float tex_coords[] = { 0.0, 1.0, 1.0, 1.0, 1.0, 0.0,
 								0.0, 1.0, 1.0, 0.0, 0.0, 0.0 };
 
@@ -274,8 +274,8 @@ void Entity::render(ShaderProgram* program) {
 
 		case OBSTACLE_BIG:
 		{
-			float vertices_obs_big[] = { -0.5, -0.5, 0.5, -0.5, 0.5, 0.5,
-						-0.5, -0.5, 0.5, 0.5, -0.5, 0.5 };
+			float vertices_obs_big[] = { -0.5, -1.5, 0.5, -1.5, 0.5, 1.5,
+						-0.5, -1.5, 0.5, 1.5, -0.5, 1.5 };
 			float tex_coords_obs_big[] = { 0.0, 1.0, 1.0, 1.0, 1.0, 0.0,
 								0.0, 1.0, 1.0, 0.0, 0.0, 0.0 };
 
@@ -296,8 +296,8 @@ void Entity::render(ShaderProgram* program) {
 
 		case END_PLATFORM:
 		{
-			float vertices_end_plat[] = { -0.5, -0.5, 0.5, -0.5, 0.5, 0.5,
-						-0.5, -0.5, 0.5, 0.5, -0.5, 0.5 };
+			float vertices_end_plat[] = { -1.0, -0.125, 1.0, -0.125, 1.0, 0.125,
+						-1.0, -0.125, 1.0, 0.125, -1.0, 0.125 };
 			float tex_coords_end_plat[] = { 0.0, 1.0, 1.0, 1.0, 1.0, 0.0,
 								0.0, 1.0, 1.0, 0.0, 0.0, 0.0 };
 
@@ -355,7 +355,9 @@ bool const Entity::check_collision(Entity* other) {
 	if (other->type != START_PLATFORM && other->type != END_PLATFORM && result ) {
 		hit_obstacle = true;
 	}
-	else if (other->type == END_PLATFORM && result) {
+	
+	
+	if (other->type == END_PLATFORM && result) {
 		is_landed_success = true;
 	}
 

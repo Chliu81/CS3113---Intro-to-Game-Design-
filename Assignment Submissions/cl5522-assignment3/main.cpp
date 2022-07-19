@@ -11,6 +11,7 @@ Program: CS3113 Assignment 3: Lunar Lander
 #define GL_GLEXT_PROTOTYPES 1
 #define FIXED_TIMESTEP 0.0166666f
 #define PLATFORM_COUNT 5
+#define OBSTACLE_COUNT 3
 
 #ifdef _WINDOWS
 #include <GL/glew.h>
@@ -34,6 +35,8 @@ struct GameState {
     Entity* platforms;
     Entity* msg_fail;
     Entity* msg_success;
+    Entity* obstacles;
+    Entity* end_plat;
 };
 
 /*
@@ -63,6 +66,8 @@ const float MILLISECONDS_IN_SECOND = 1000.0;
 const char SPRITESHEET_FILEPATH[] = "assets/george_0.png";
 const char PLATFORM_FILEPATH[] = "assets/platformPack_tile027.png";
 const char TEXT_FILEPATH[] = "assets/font1.png";
+const char OBSTACLE_FILEPATH[] = "assets/bricks.jpg";
+const char END_PLAT_FILEPATH[] = "assets/gold.jpg";
 
 
 const float MINIMUM_COLLISION_DISTANCE = 1.0f;
@@ -163,33 +168,33 @@ void initialise()
 
     state.platforms = new Entity[PLATFORM_COUNT];
 
-    state.platforms[PLATFORM_COUNT - 1].texture_id = platform_texture_id;
+    /*state.platforms[PLATFORM_COUNT - 1].texture_id = platform_texture_id;
     state.platforms[PLATFORM_COUNT-1].type = END_PLATFORM;
     state.platforms[PLATFORM_COUNT - 1].set_position(glm::vec3(-1.5f, -2.35f, 0.0f));
     state.platforms[PLATFORM_COUNT - 1].set_width(1.0f);
     state.platforms[PLATFORM_COUNT - 1].set_height(0.5f);
-    state.platforms[PLATFORM_COUNT - 1].update(0.0f, NULL, 0);
+    state.platforms[PLATFORM_COUNT - 1].update(0.0f, NULL, 0);*/
 
-    for (int i = 0; i < PLATFORM_COUNT - 2; i++) {
+    for (int i = 0; i < PLATFORM_COUNT; i++) {
         state.platforms[i].texture_id = platform_texture_id;
         state.platforms[i].type = START_PLATFORM;
-        state.platforms[i].set_position(glm::vec3(i - 1.0f, -3.0f, 0.0f));
-        state.platforms[i].set_width(1.0f);
-        state.platforms[i].set_height(0.5f);
+        state.platforms[i].set_position(glm::vec3(i*4 - 5.0f, -3.3f, 0.0f));
+        state.platforms[i].set_width(4.0f);
+        state.platforms[i].set_height(1.0f);
         state.platforms[i].update(0.0f, NULL, 0);
     }
     
-    state.platforms[PLATFORM_COUNT - 2].texture_id = platform_texture_id;
+    /*state.platforms[PLATFORM_COUNT - 2].texture_id = platform_texture_id;
     state.platforms[PLATFORM_COUNT - 2].type = OBSTACLE_SMALL;
     state.platforms[PLATFORM_COUNT - 2].set_position(glm::vec3(2.5f, -2.5f, 0.0f));
     state.platforms[PLATFORM_COUNT - 2].set_width(1.0f);
     state.platforms[PLATFORM_COUNT - 2].set_height(0.5f);
-    state.platforms[PLATFORM_COUNT - 2].update(0.0f, NULL, 0);
+    state.platforms[PLATFORM_COUNT - 2].update(0.0f, NULL, 0);*/
 
     // Existing
     state.player = new Entity();
     state.player->type = PLAYER;
-    state.player->set_position(glm::vec3(0.0f));
+    state.player->set_position(glm::vec3(-3.0f, 0.0f, 0.0f));
     state.player->set_movement(glm::vec3(0.0f));
     state.player->speed = 1.0f;
     state.player->set_acceleration(glm::vec3(0.0f, -2.0f, 0.0f));
@@ -208,12 +213,12 @@ void initialise()
     state.player->animation_time = 0.0f;
     state.player->animation_cols = 4;
     state.player->animation_rows = 4;
-    state.player->set_height(0.9f);
-    state.player->set_width(0.9f);
+    state.player->set_height(0.5f);
+    state.player->set_width(0.5f);
 
     //Jumping
-    state.player->gravity_effect = -2.0f;
-    state.player->thrusting_power = 3.0f;
+    state.player->gravity_effect = -0.05f;
+    state.player->thrusting_power = 0.3f;
 
     //Fail Message
     GLuint fail_msg_texture_id = load_texture(TEXT_FILEPATH);
@@ -244,6 +249,40 @@ void initialise()
         state.msg_success[i].set_position(glm::vec3((i * 0.5f) - 4.3f, 2.0f, 0.0f));
         state.msg_success[i].update(0.0f, NULL, 0);
     }
+
+    //OBSTACLES
+
+    GLuint obstacle_texture_id = load_texture(OBSTACLE_FILEPATH);
+    state.obstacles = new Entity[OBSTACLE_COUNT];
+
+    //obstacle #1
+    state.obstacles[0].texture_id = obstacle_texture_id;
+    state.obstacles[0].type = OBSTACLE_SMALL;
+    state.obstacles[0].set_position(glm::vec3(-1.0f, 1.3f, 0.0f));
+    state.obstacles[0].set_height(1.0f);
+    state.obstacles[0].set_width(1.0f);
+    state.obstacles[0].update(0.0f, NULL, 0);
+
+    for (int i = 1; i < OBSTACLE_COUNT; ++i) {
+        state.obstacles[i].texture_id = obstacle_texture_id;
+        state.obstacles[i].type = OBSTACLE_BIG;
+        state.obstacles[i].set_position(glm::vec3((i-1.4f)+(i-0.2f), -1.55f, 0.0f));
+        state.obstacles[i].set_height(3.3f);
+        state.obstacles[i].set_width(1.0f);
+        state.obstacles[i].update(0.0f, NULL, 0);
+    }
+
+    //END PLATFORM
+
+    GLuint end_plat_texture_id = load_texture(END_PLAT_FILEPATH);
+    state.end_plat = new Entity;
+    state.end_plat->texture_id = end_plat_texture_id;
+    state.end_plat->type = END_PLATFORM;
+    state.end_plat->set_position(glm::vec3(1.7f, -0.6f, 0.0f));
+    state.end_plat->set_height(0.5f);
+    state.end_plat->set_width(0.5f);
+    state.end_plat->update(0.0f, NULL, 0);
+
 
     //enable blending
     glEnable(GL_BLEND);
@@ -337,7 +376,7 @@ void process_input() {
                     game_is_running = false;
                     break;
 
-                case SDLK_SPACE:
+                case SDLK_w:
                     //Jump
                     state.player->is_thrusting_up = true;
                     break;
@@ -363,9 +402,13 @@ void process_input() {
         state.player->is_thrusting_right = true;
     }
 
-    if (key_state[SDL_SCANCODE_SPACE]) {
+    if (key_state[SDL_SCANCODE_W]) {
         state.player->is_thrusting_up = true;
     }
+
+    if (key_state[SDL_SCANCODE_SPACE]) {
+        state.player->is_thrusting_up = true;
+    };
 
     if (glm::length(state.player->movement) > 1.0f) {
         state.player->movement = glm::normalize(state.player->movement);
@@ -388,6 +431,8 @@ void update()
 
     while (delta_time >= FIXED_TIMESTEP) {
         state.player->update(FIXED_TIMESTEP, state.platforms, PLATFORM_COUNT);
+        state.player->update(FIXED_TIMESTEP, state.obstacles, OBSTACLE_COUNT);
+        state.player->update(FIXED_TIMESTEP, state.end_plat, 1);
         delta_time -= FIXED_TIMESTEP;
     }
 
@@ -406,7 +451,11 @@ void render() {
 
     state.player->render(&program);
 
+    state.end_plat->render(&program);
+
     for (int i = 0; i < PLATFORM_COUNT; i++) state.platforms[i].render(&program);
+
+    for (int i = 0; i < OBSTACLE_COUNT; i++) state.obstacles[i].render(&program);
 
     if (state.player->hit_obstacle) {
         for (int i = 0; i < str_fail_len; i++) state.msg_fail[i].render(&program);

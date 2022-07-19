@@ -60,9 +60,9 @@ F_SHADER_PATH[] = "shaders/fragment_textured.glsl";
 
 const float MILLISECONDS_IN_SECOND = 1000.0;
 
-const char SPRITESHEET_FILEPATH[] = "george_0.png";
-const char PLATFORM_FILEPATH[] = "platformPack_tile027.png";
-const char TEXT_FILEPATH[] = "font1.png";
+const char SPRITESHEET_FILEPATH[] = "assets/george_0.png";
+const char PLATFORM_FILEPATH[] = "assets/platformPack_tile027.png";
+const char TEXT_FILEPATH[] = "assets/font1.png";
 
 
 const float MINIMUM_COLLISION_DISTANCE = 1.0f;

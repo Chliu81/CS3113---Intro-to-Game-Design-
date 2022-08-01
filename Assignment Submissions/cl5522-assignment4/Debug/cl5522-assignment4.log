@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522-assignment4\cl5522-assignment4\Entity.h(93,56): warning C4244: 'return': conversion from 'const float' to 'const int', possible loss of data
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522-assignment4\cl5522-assignment4\Entity.h(94,56): warning C4244: 'return': conversion from 'const float' to 'const int', possible loss of data
+  cl5522-assignment4.vcxproj -> C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522-assignment4\Debug\cl5522-assignment4.exe

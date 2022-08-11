@@ -1,0 +1,15 @@
+﻿  LevelA.cpp
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522_assignment5\cl5522_assignment5\Entity.h(92,56): warning C4244: 'return': conversion from 'const float' to 'const int', possible loss of data
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522_assignment5\cl5522_assignment5\Entity.h(93,56): warning C4244: 'return': conversion from 'const float' to 'const int', possible loss of data
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522_assignment5\cl5522_assignment5\LevelA.cpp(128,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  LevelB.cpp
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522_assignment5\cl5522_assignment5\Entity.h(92,56): warning C4244: 'return': conversion from 'const float' to 'const int', possible loss of data
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522_assignment5\cl5522_assignment5\Entity.h(93,56): warning C4244: 'return': conversion from 'const float' to 'const int', possible loss of data
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522_assignment5\cl5522_assignment5\LevelB.cpp(128,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  LevelC.cpp
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522_assignment5\cl5522_assignment5\Entity.h(92,56): warning C4244: 'return': conversion from 'const float' to 'const int', possible loss of data
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522_assignment5\cl5522_assignment5\Entity.h(93,56): warning C4244: 'return': conversion from 'const float' to 'const int', possible loss of data
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522_assignment5\cl5522_assignment5\LevelC.cpp(128,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  LINK : C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522_assignment5\Debug\cl5522_assignment5.exe not found or not built by the last incremental link; performing full link
+  cl5522_assignment5.vcxproj -> C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522_assignment5\Debug\cl5522_assignment5.exe

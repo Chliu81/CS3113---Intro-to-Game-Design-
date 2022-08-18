@@ -1,0 +1,19 @@
+﻿  main.cpp
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522-assignment6\cl5522-assignment6\Entity.h(63,34): warning C4244: 'initializing': conversion from 'genType' to 'float', possible loss of data
+          with
+          [
+              genType=double
+          ]
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522-assignment6\cl5522-assignment6\Entity.h(64,37): warning C4244: 'initializing': conversion from 'genType' to 'float', possible loss of data
+          with
+          [
+              genType=double
+          ]
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522-assignment6\cl5522-assignment6\Entity.h(67,38): warning C4244: 'initializing': conversion from 'genType' to 'float', possible loss of data
+          with
+          [
+              genType=double
+          ]
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522-assignment6\cl5522-assignment6\Entity.h(104,56): warning C4244: 'return': conversion from 'const float' to 'const int', possible loss of data
+C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522-assignment6\cl5522-assignment6\Entity.h(105,56): warning C4244: 'return': conversion from 'const float' to 'const int', possible loss of data
+  cl5522-assignment6.vcxproj -> C:\Users\charl\OneDrive\Documents\CS 3113 Intro to Game Design\Assignment Submissions\cl5522-assignment6\Debug\cl5522-assignment6.exe
